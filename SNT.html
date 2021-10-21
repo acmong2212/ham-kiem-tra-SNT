@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham kiem tra so nguyen to</title>
+</head>
+<body>
+Nhập vào số cần kiểm tra : <input type="text" id="number">
+<input type="button" value="Kiểm Tra" onclick="isPrime()">
+<input type="button" value="Hiển thị tất cả các SNT < 10000" onclick="check()">
+<p id="result"></p>
+</body>
+<script>
+    function isPrime (){
+        let num = parseInt(document.getElementById('number').value)
+        let flag = true;
+        if (num < 2){
+            flag = false;
+        } else if (num == 2){
+            flag = true;
+        } else if (num % 2 == 0){
+            flag = false;
+        } else {
+            for (var i = 3; i < Math.sqrt(num); i = i + 2) {
+                if (num % i == 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (flag == true){
+            document.getElementById('result').innerHTML = num + " Là số nguyên tố "
+        } else{
+            document.getElementById('result').innerHTML = num + " không phải là số nguyên tố "
+        }
+    }
+
+    function check() {
+        for (let num = 0; num <= 10000; num++) {
+            let num = 0
+            isPrime(0)
+        }
+    }
+</script>
+</html>
